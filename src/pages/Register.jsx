@@ -1,5 +1,4 @@
 import Navbar from "../components/Navbar";
-import iconGoogle from "../assets/icon-google.png";
 
 export default function Register() {
   return (
@@ -131,7 +130,7 @@ export default function Register() {
               type="submit"
               className="items-center gap-2 w-full flex justify-center py-3 px-4 border rounded-md shadow-sm font-medium bg-white hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2"
             >
-              <img src={iconGoogle} alt="icon-google" />
+              <img src="/icon-google.png" alt="icon-google" />
               <span>Masuk dengan Google</span>
             </button>
           </form>

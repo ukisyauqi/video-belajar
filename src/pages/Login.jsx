@@ -1,5 +1,4 @@
 import Navbar from "../components/Navbar";
-import iconGoogle from "../assets/icon-google.png"
 
 export default function Login() {
   return (
@@ -28,7 +27,6 @@ export default function Login() {
                   name="email"
                   id="email"
                   autoComplete="email"
-                  className="block w-full rounded-md border shadow-sm px-3 py-3 text-gray-900"
                   placeholder="name@example.com"
                 />
               </div>
@@ -43,7 +41,6 @@ export default function Login() {
                   name="password"
                   id="password"
                   autoComplete="current-password"
-                  className="block w-full rounded-md border shadow-sm px-3 py-3 text-gray-900"
                 />
               </div>
             </div>
@@ -56,13 +53,13 @@ export default function Login() {
 
             <button
               type="submit"
-              className="w-full flex justify-center py-3 px-4 rounded-md shadow-sm font-medium text-white bg-primary hover:bg-primary/80 focus:outline-none focus:ring-2 focus:ring-offset-2"
+              className="w-full rounded-md shadow-sm font-medium text-white bg-primary"
             >
               Masuk
             </button>
             <button
               type="submit"
-              className="w-full flex justify-center py-3 px-4 rounded-md shadow-sm font-medium text-primary bg-primary-100 hover:bg-primary-100/80 focus:outline-none focus:ring-2 focus:ring-offset-2"
+              className="w-full rounded-md shadow-sm font-medium text-primary bg-primary-100"
             >
               Daftar
             </button>
@@ -74,9 +71,9 @@ export default function Login() {
             </div>
             <button
               type="submit"
-              className="items-center gap-2 w-full flex justify-center py-3 px-4 border rounded-md shadow-sm font-medium bg-white hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2"
+              className="center gap-2 w-full border rounded-md shadow-sm font-medium bg-white"
             >
-              <img src={iconGoogle} alt="icon-google" />
+              <img src="/icon-google.png" alt="icon-google" />
               <span>Masuk dengan Google</span>
             </button>
           </form>
