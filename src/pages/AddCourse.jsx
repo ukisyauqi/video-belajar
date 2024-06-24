@@ -42,7 +42,7 @@ export default function AddCourse() {
                   type="text"
                   className="mt-2"
                   name={key}
-                  defaultValue={course[key]}
+                  placeholder={course[key]}
                 />
               </>
             ))}
