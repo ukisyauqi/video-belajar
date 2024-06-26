@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
 
-export default function CourseCard({ course }) {
+export default function CourseCard({ course, i }) {
   return (
     <>
-      <Link to={`/course/${course.id}`}>
-        <div className="border rounded-lg bg-white p-4 space-y-3 max-w-96 flex-1 min-w-96 md:min-w-80 hover:shadow-lg transition-all">
+      <Link to={`/course/${course.id}`} className="w-72 md:w-96 flex-auto" key={i}>
+        <div className="border rounded-lg bg-white p-4 space-y-3 hover:shadow-lg hover:transition-all">
           <div className="space-y-3 flex gap-4 items-center md:block">
             <img
               src={`${course.courseImage}`}

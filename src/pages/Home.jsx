@@ -1,14 +1,14 @@
-import { useContext } from "react";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
-import BannerBottom from "../components/BannerBottom";
-import BannerTop from "../components/BannerTop";
-import CourseCard from "../components/CourseCard";
-import { AppContext } from "../context";
-import { Link } from "react-router-dom";
+import { useContext } from "react"
+import Navbar from "../components/Navbar"
+import Footer from "../components/Footer"
+import BannerBottom from "../components/BannerBottom"
+import BannerTop from "../components/BannerTop"
+import CourseCard from "../components/CourseCard"
+import { AppContext } from "../context"
+import { Link } from "react-router-dom"
 
 export default function Home() {
-  const { courses } = useContext(AppContext);
+  const { courses } = useContext(AppContext)
 
   return (
     <div className="min-h-screen bg-[#fffdf3] flex flex-col">
@@ -57,9 +57,7 @@ export default function Home() {
 
           <div className="flex gap-6 flex-wrap justify-center">
             {courses.map((course, i) => (
-              <div key={i}>
-                <CourseCard course={course} />
-              </div>
+              <CourseCard course={course} key={i} />
             ))}
           </div>
         </div>
@@ -68,5 +66,5 @@ export default function Home() {
       </div>
       <Footer />
     </div>
-  );
+  )
 }
