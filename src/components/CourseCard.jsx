@@ -4,7 +4,7 @@ export default function CourseCard({ course }) {
   return (
     <>
       <Link to={`/course/${course.id}`}>
-        <div className="border rounded-lg bg-white p-4 space-y-3 max-w-96 flex-1 min-w-96 md:min-w-80">
+        <div className="border rounded-lg bg-white p-4 space-y-3 max-w-96 flex-1 min-w-96 md:min-w-80 hover:shadow-lg transition-all">
           <div className="space-y-3 flex gap-4 items-center md:block">
             <img
               src={`${course.courseImage}`}
@@ -13,11 +13,13 @@ export default function CourseCard({ course }) {
             />
 
             <div>
-              <h5 className="font-semibold line-clamp-2 md:line-clamp-1">
-                {course.title}
+              <h5 className="font-semibold max-w-container">
+                <div className="md:line-clamp-1 line-clamp-2">
+                  {course.title}
+                </div>
               </h5>
-              <p className="font-medium text-gray-500 hidden mt-2 mb-3 md:line-clamp-2">
-                {course.description}
+              <p className="font-medium text-gray-500 hidden mt-2 mb-3 md:block">
+                <div className="md:line-clamp-2">{course.description}</div>
               </p>
 
               <div className="flex items-center">
@@ -37,7 +39,6 @@ export default function CourseCard({ course }) {
                   </p>
                 </div>
               </div>
-              
             </div>
           </div>
 

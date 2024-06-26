@@ -25,6 +25,8 @@ export default function AddCourse() {
         </div>
       </Navbar>
       <div className="flex-1 max-w-[1240px] mx-auto w-full px-5 pb-10 mt-8">
+
+        <h3 className="center font-semibold">Add Course</h3>
         <form onSubmit={handleSubmit}>
           <input
             className="mt-2"

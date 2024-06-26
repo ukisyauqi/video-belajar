@@ -24,7 +24,7 @@ export default function Products() {
             <div className="border rounded-lg bg-white p-5 space-y-4">
               <div className="flex justify-between items-center">
                 <h5 className="font-semibold">Filter</h5>
-                <button className="btn-link text-red-500 font-semibold">
+                <button className="text-red-500 font-semibold">
                   Reset
                 </button>
               </div>

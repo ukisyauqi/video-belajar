@@ -7,7 +7,7 @@ import Footer from "../components/Footer";
 
 export default function EditCourse() {
   const { id } = useParams();
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const { courses, setCourses } = useContext(AppContext);
   const course = courses.find((course) => course.id == id);
@@ -29,13 +29,9 @@ export default function EditCourse() {
         </div>
       </Navbar>
       <div className="flex-1 max-w-[1240px] mx-auto w-full px-5 pb-10 mt-8">
+        <h3 className="center font-semibold">Edit Course</h3>
         <form onSubmit={handleSubmit}>
-          <input
-            className="mt-2"
-            name="id"
-            type="hidden"
-            value={course.id}
-          />
+          <input className="mt-2" name="id" type="hidden" value={course.id} />
 
           {Object.keys(course)
             .slice(1)
@@ -55,7 +51,7 @@ export default function EditCourse() {
           </button>
         </form>
       </div>
-      <Footer/>
+      <Footer />
     </div>
   );
 }
