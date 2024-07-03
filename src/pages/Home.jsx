@@ -1,15 +1,11 @@
-import { useContext } from "react"
 import Navbar from "../components/Navbar"
 import Footer from "../components/Footer"
 import BannerBottom from "../components/BannerBottom"
 import BannerTop from "../components/BannerTop"
-import CourseCard from "../components/CourseCard"
-import { AppContext } from "../context"
 import { Link } from "react-router-dom"
+import CourseList from "../components/CourseList"
 
 export default function Home() {
-  const { courses } = useContext(AppContext)
-
   return (
     <div className="min-h-screen bg-[#fffdf3] flex flex-col">
       <Navbar>
@@ -55,11 +51,7 @@ export default function Home() {
             </Link>
           </div>
 
-          <div className="flex gap-6 flex-wrap justify-center">
-            {courses.map((course, i) => (
-              <CourseCard course={course} key={i} />
-            ))}
-          </div>
+          <CourseList />
         </div>
 
         <BannerBottom />

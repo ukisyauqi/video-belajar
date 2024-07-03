@@ -1,9 +1,8 @@
 import { createContext, useState } from "react";
-import { coursesDummyData } from "./utils/data";
 export const AppContext = createContext(null);
 
 export const ContextProvider = ({ children }) => {
-  const [courses, setCourses] = useState(coursesDummyData);
+  const [courses, setCourses] = useState([]);
   return (
     <AppContext.Provider
       value={{
