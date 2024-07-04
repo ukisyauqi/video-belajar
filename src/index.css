@@ -15,7 +15,7 @@
   button {
     @apply rounded px-4 py-2 text-center whitespace-nowrap;
   }
-  input {
+  input, textarea {
     @apply w-full rounded-md border shadow-sm p-3 text-black bg-white;
   }
   h1 {

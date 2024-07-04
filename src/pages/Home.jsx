@@ -1,15 +1,10 @@
-import { useContext } from "react"
-import Navbar from "../components/Navbar"
-import Footer from "../components/Footer"
-import BannerBottom from "../components/BannerBottom"
-import BannerTop from "../components/BannerTop"
-import CourseCard from "../components/CourseCard"
-import { AppContext } from "../context"
-import { Link } from "react-router-dom"
+import Navbar from "../components/ui/Navbar"
+import Footer from "../components/ui/Footer"
+import BannerBottom from "../components/Home/BannerBottom"
+import BannerTop from "../components/Home/BannerTop"
+import CourseList from "../components/Home/CourseList"
 
 export default function Home() {
-  const { courses } = useContext(AppContext)
-
   return (
     <div className="min-h-screen bg-[#fffdf3] flex flex-col">
       <Navbar>
@@ -35,31 +30,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="text-gray-600 overflow-auto flex gap-7">
-            <a className="pl-0 text-red-500 font-medium">
-              <span>Semua Kelas</span>
-              <div className="flex mt-3">
-                <div className="bg-red-500 h-1.5 flex-1 rounded-full"></div>
-                <div className="flex-1"></div>
-              </div>
-            </a>
-            <a>Pemasaran</a>
-            <a>Desain</a>
-            <a>Pengembangan Diri</a>
-            <a>Bisnis</a>
-            <div className="flex-1"></div>
-            <Link to={"/add-course"}>
-              <button className="bg-green-500 rounded-xl px-6 text-white">
-                Add Course
-              </button>
-            </Link>
-          </div>
-
-          <div className="flex gap-6 flex-wrap justify-center">
-            {courses.map((course, i) => (
-              <CourseCard course={course} key={i} />
-            ))}
-          </div>
+          <CourseList />
         </div>
 
         <BannerBottom />

@@ -1,9 +1,8 @@
-import { createContext, useState } from "react";
-import { coursesDummyData } from "./utils/data";
-export const AppContext = createContext(null);
+import { createContext, useState } from "react"
+export const AppContext = createContext(null)
 
 export const ContextProvider = ({ children }) => {
-  const [courses, setCourses] = useState(coursesDummyData);
+  const [courses, setCourses] = useState([])
   return (
     <AppContext.Provider
       value={{
@@ -13,8 +12,8 @@ export const ContextProvider = ({ children }) => {
     >
       {children}
     </AppContext.Provider>
-  );
-};
+  )
+}
 
 /* 
 // wrap at root component
