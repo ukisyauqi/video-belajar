@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom"
+import { calculateDiscount, convertToRupiah } from "../../utils/function"
 
 export default function CourseCard({ course }) {
   return (
@@ -51,7 +52,7 @@ export default function CourseCard({ course }) {
             </p>
             <span className="flex-1"></span>
             <p className="text-green-500 font-semibold text-2xl line-clamp-1">
-              Rp{new Intl.NumberFormat("id-ID").format(course.price)}
+              {convertToRupiah(calculateDiscount(course.price, course.discount))}
             </p>
           </span>
         </span>

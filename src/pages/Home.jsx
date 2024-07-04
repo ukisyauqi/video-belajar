@@ -1,9 +1,8 @@
-import Navbar from "../components/Navbar"
-import Footer from "../components/Footer"
-import BannerBottom from "../components/BannerBottom"
-import BannerTop from "../components/BannerTop"
-import { Link } from "react-router-dom"
-import CourseList from "../components/CourseList"
+import Navbar from "../components/ui/Navbar"
+import Footer from "../components/ui/Footer"
+import BannerBottom from "../components/Home/BannerBottom"
+import BannerTop from "../components/Home/BannerTop"
+import CourseList from "../components/Home/CourseList"
 
 export default function Home() {
   return (
@@ -29,26 +28,6 @@ export default function Home() {
             <p className="text-gray-600">
               Jelajahi Dunia Pengetahuan Melalui Pilihan Kami!
             </p>
-          </div>
-
-          <div className="text-gray-600 overflow-auto flex gap-7">
-            <a className="pl-0 text-red-500 font-medium">
-              <span>Semua Kelas</span>
-              <div className="flex mt-3">
-                <div className="bg-red-500 h-1.5 flex-1 rounded-full"></div>
-                <div className="flex-1"></div>
-              </div>
-            </a>
-            <a>Pemasaran</a>
-            <a>Desain</a>
-            <a>Pengembangan Diri</a>
-            <a>Bisnis</a>
-            <div className="flex-1"></div>
-            <Link to={"/add-course"}>
-              <button className="bg-green-500 rounded-xl px-6 text-white">
-                Add Course
-              </button>
-            </Link>
           </div>
 
           <CourseList />
