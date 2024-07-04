@@ -1,6 +1,8 @@
+const apiUrl = import.meta.env.VITE_API_URL;
+
 export async function fetchCourses() {
   const response = await fetch(
-    "https://667f8471f2cb59c38dc91606.mockapi.io/api/v1/courses"
+    apiUrl
   )
   if (!response.ok) {
     throw new Error("Network response was not ok")
@@ -10,7 +12,7 @@ export async function fetchCourses() {
 
 export async function fetchCourseById(courseId) {
   const response = await fetch(
-    `https://667f8471f2cb59c38dc91606.mockapi.io/api/v1/courses/${courseId}`
+    `${apiUrl}/${courseId}`
   )
   if (!response.ok) {
     throw new Error("Network response was not ok")
@@ -20,7 +22,7 @@ export async function fetchCourseById(courseId) {
 
 export async function createCourse(course) {
   const response = await fetch(
-    "https://667f8471f2cb59c38dc91606.mockapi.io/api/v1/courses",
+    apiUrl,
     {
       method: "POST",
       headers: {
@@ -37,7 +39,7 @@ export async function createCourse(course) {
 
 export async function editCourse(courseId, course) {
   const response = await fetch(
-    `https://667f8471f2cb59c38dc91606.mockapi.io/api/v1/courses/${courseId}`,
+    `${apiUrl}/${courseId}`,
     {
       method: "PUT",
       headers: {
@@ -54,7 +56,7 @@ export async function editCourse(courseId, course) {
 
 export async function deleteCourse(courseId) {
   const response = await fetch(
-    `https://667f8471f2cb59c38dc91606.mockapi.io/api/v1/courses/${courseId}`,
+    `${apiUrl}/${courseId}`,
     {
       method: "DELETE",
     }
