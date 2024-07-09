@@ -3,17 +3,18 @@ import Navbar from "../components/ui/Navbar"
 import Footer from "../components/ui/Footer"
 import { useState } from "react"
 import Modal from "../components/ui/Modal"
-import useFetch from "../hooks/useFetch"
-import { deleteCourse, fetchCourseById } from "../services/api"
+import { deleteCourse } from "../services/api"
 import { calculateDiscount, convertToRupiahVShort } from "../utils/function"
 import { Loading } from "../components/ui/Loading"
 import toast from "react-hot-toast"
+import { useCourseContext } from "../contexts/CourseContext"
 
 export default function DetailCourse() {
   const { id } = useParams()
   const navigate = useNavigate()
 
-  const { data: course, loading, error } = useFetch(() => fetchCourseById(id))
+  const { getCourseAtId, loading, error, reFetchCourses } = useCourseContext()
+  const course = getCourseAtId(id)
 
   const [showModal, setShowModal] = useState(false)
 
@@ -42,6 +43,7 @@ export default function DetailCourse() {
                 deleteCourse(id)
                   .then(() => {
                     toast.success("Kelas Berhasil Dihapus")
+                    reFetchCourses()
                     navigate("/")
                   })
                   .catch((err) => {
