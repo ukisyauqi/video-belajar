@@ -1,13 +1,12 @@
 import CourseCard from "./CourseCard"
-import { fetchCourses } from "../../services/api"
-import useFetch from "../../hooks/useFetch"
 import { Loading } from "../ui/Loading"
 import { Link } from "react-router-dom"
 import { useEffect, useState } from "react"
 import { camelCaseToTitleCase } from "../../utils/function"
+import { useCourseContext } from "../../contexts/CourseContext"
 
 export default function CourseList() {
-  const { data: courses, loading, error } = useFetch(fetchCourses)
+  const { courses, loading, error } = useCourseContext()
 
   const [tabList, setTablist] = useState([""])
   const [activeTab, setActiveTab] = useState(tabList[0])

@@ -2,16 +2,18 @@ import Navbar from "../components/ui/Navbar"
 import { camelCaseToTitleCase } from "../utils/function"
 import { useNavigate, useParams } from "react-router-dom"
 import Footer from "../components/ui/Footer"
-import { editCourse, fetchCourseById } from "../services/api"
+import { editCourse } from "../services/api"
 import toast from "react-hot-toast"
-import useFetch from "../hooks/useFetch"
+
 import { formPlaceholder } from "../utils/data"
+import { useCourseContext } from "../contexts/CourseContext"
 
 export default function EditCourse() {
   const navigate = useNavigate()
 
   const { id } = useParams()
-  const { data: course } = useFetch(() => fetchCourseById(id))
+  const { getCourseAtId, reFetchCourses } = useCourseContext()
+  const course = getCourseAtId(id)
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -24,9 +26,13 @@ export default function EditCourse() {
     editCourse(id, data)
       .then(() => {
         toast.success("Kursus berhasil ditambahkan")
+        reFetchCourses()
         navigate("/")
       })
-      .catch((err) => toast.error(err))
+      .catch((err) => {
+        console.log(err)
+        toast.error(err)
+      })
   }
   return (
     <div className="min-h-screen bg-[#fffdf3] flex flex-col">

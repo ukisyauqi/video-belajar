@@ -11,6 +11,7 @@ export default function CourseCard({ course }) {
               src={`${course.imageUrl}`}
               alt="image-items-1"
               className="w-28 h-28 rounded-xl md:w-full md:h-full image-center"
+              loading="lazy"
             />
 
             <span>
@@ -52,7 +53,9 @@ export default function CourseCard({ course }) {
             </p>
             <span className="flex-1"></span>
             <p className="text-green-500 font-semibold text-2xl line-clamp-1">
-              {convertToRupiah(calculateDiscount(course.price, course.discount))}
+              {convertToRupiah(
+                calculateDiscount(course.price, course.discount)
+              )}
             </p>
           </span>
         </span>

@@ -5,9 +5,13 @@ import Footer from "../components/ui/Footer"
 import { createCourse } from "../services/api"
 import { useNavigate } from "react-router-dom"
 import toast from "react-hot-toast"
+import { useCourseContext } from "../contexts/CourseContext"
 
 export default function AddCourse() {
   const navigate = useNavigate()
+
+  const { reFetchCourses } = useCourseContext()
+
   const handleSubmit = (e) => {
     e.preventDefault()
     const data = Object.fromEntries(new FormData(e.target))
@@ -19,6 +23,7 @@ export default function AddCourse() {
     createCourse(data)
       .then(() => {
         toast.success("Kursus berhasil ditambahkan")
+        reFetchCourses()
         navigate("/")
       })
       .catch((err) => toast.error(err))
